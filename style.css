@@ -1,4 +1,43 @@
-:root {
-    color: dodgerblue;
-    background: white;
+:root {	
+	--color: dodgerblue;
+	--background: white;
+
+	--body-copy: 1rem;
+	--heading-copy: 2rem;
+
+	--gutter: 2rem;
+	--vertical: 4rem;
+}
+
+body {
+	color: var(--color);
+	background-color: var(--background);
+	font-size: var(--body-copy);
+	font-family: sans-serif;
+	block-size: 100vh;
+	display: grid;
+	grid-template-rows: min-content 1fr min-content;
+	align-items: center;
+}
+
+main {
+	padding-inline: var(--gutter);
+	padding-block: var(--vertical);
+}
+
+h1 {
+	font-size: var(--heading-copy);
+}
+
+ul {
+	padding-inline: var(--gutter);
+	display: grid;
+	gap: var(--gutter);
+}
+
+hgroup, footer {
+	color: var(--background);
+	background-color: var(--color);
+	padding-inline: var(--gutter);
+	padding-block: var(--vertical);
 }
