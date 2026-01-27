@@ -1,13 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap');
+
 :root {	
 	--color: dodgerblue;
-	--background: white;
+	
 
-	--body-copy: 1rem;
+	--body-font: "Inter", sans-serif;
+	--heading-font: "Space Grotesk", sans-serif;
+	--body-copy: 0.9rem;
 	--heading-copy: 2rem;
 
 	--gutter: 2rem;
 	--vertical: 4rem;
+
+	--black: #171717;
+	--dark-pink: #BF4377;
+	--medium-pink: #F57AAD;
+	--light-pink: #FA87B7;
+	--white: #FFFFFF;
+	--light-grey: #F2F2F2;
 }
+
+/* Wanted a cool pattern behind my work */
+/* Found this pattern collection: https://css-pattern.com/ */
+/* I learned that you can layer multiple CSS gradients to... */
+/* html {
+	--s: 98px;
+	--grid-line: #336666;
+	--c2: #ffffff;
+	
+	--_g: #0000 90deg,var(--grid-line) 0;
+	background: 
+		conic-gradient(from 90deg at 2px 2px,var(--_g)),
+		conic-gradient(from 90deg at 1px 1px,var(--_g)),
+		var(--c2);
+	background-size: var(--s) var(--s), calc(var(--s)/5) calc(var(--s)/5);
+} */
+
+/* ------------ navigation ------------- */
+
+#navigation {
+	max-width: 1200px;
+	margin: var(--gutter) auto 0;
+	padding: calc(0.5*var(--gutter));
+
+	background: var(--light-grey);
+	border-radius: 9999px;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 8rem;
+}
+
+.nav-logo {
+	display: inline-flex;
+	align-items: center;
+}
+
+.nav-logo img {
+	height: 36px;
+	width: auto;
+	display: block;
+}
+
+#nav-links {
+	list-style: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	gap: var(--gutter);
+	margin: 0;
+	padding: 0;
+}
+
+#nav-links a {
+	text-decoration: none;
+	color: var(--black);
+	font-family: var(--body-font);
+	font-weight: 500;
+	font-size: var(--body-copy);
+}
+
+#nav-links a:hover {
+	opacity: 0.75;
+	color: var(--medium-pink);
+}
+
+.contact {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+
+	height: 34px;
+	padding: calc(0.5*var(--gutter));
+
+	border-radius: 9999px;
+	background: var(--light-pink);
+	color: var(--white);
+
+	text-decoration: none;
+	font-family: var(--body-font);
+	font-weight: 500;
+	font-size: var(--body-copy);
+}
+
+a.contact:hover {
+  	color: var(--dark-pink);
+ 	background-color: var(--light-pink);
+}
+
+
+@media (max-width: 700px) {
+  #nav-links {
+    display: none;
+  }
+}
+
 
 body {
 	color: var(--color);
