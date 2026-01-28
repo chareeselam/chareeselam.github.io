@@ -1,13 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap');
 
 :root {	
-	--color: dodgerblue;
-	
-
 	--body-font: "Inter", sans-serif;
 	--heading-font: "Space Grotesk", sans-serif;
-	--body-copy: 0.9rem;
-	--heading-copy: 2rem;
+	--body-size: 0.9rem;
+	--h1-size: 2rem;
+	--h2-size: 1.5rem;
 
 	--gutter: 2rem;
 	--vertical: 4rem;
@@ -79,7 +77,7 @@
 	color: var(--black);
 	font-family: var(--body-font);
 	font-weight: 500;
-	font-size: var(--body-copy);
+	font-size: var(--body-size);
 }
 
 #nav-links a:hover {
@@ -102,7 +100,7 @@
 	text-decoration: none;
 	font-family: var(--body-font);
 	font-weight: 500;
-	font-size: var(--body-copy);
+	font-size: var(--body-size);
 }
 
 a.contact:hover {
@@ -119,10 +117,10 @@ a.contact:hover {
 
 
 body {
-	color: var(--color);
+	color: var(--black);
 	background-color: var(--background);
-	font-size: var(--body-copy);
-	font-family: sans-serif;
+	font-size: var(--body-size);
+	font-family: var(--body-font);
 	block-size: 100vh;
 	display: grid;
 	grid-template-rows: min-content 1fr min-content;
@@ -135,7 +133,13 @@ main {
 }
 
 h1 {
-	font-size: var(--heading-copy);
+	font-size: var(--h1-size);
+}
+
+h2 {
+	color: var(--black);
+	font-size: var(--h2-size);
+	font-family: var(--heading-font);
 }
 
 ul {
@@ -149,4 +153,30 @@ hgroup, footer {
 	background-color: var(--color);
 	padding-inline: var(--gutter);
 	padding-block: var(--vertical);
+}
+
+/* ------------ project covers ------------- */
+
+.project-cover {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: var(--gutter);
+
+	padding: var(--gutter);
+	border: 2px solid var(--medium-pink);
+
+	text-decoration: none;
+	color: inherit;
+	background: var(--white);
+}
+
+.tag-pills {
+	background-color: var(--light-grey);
+	color: var(--black);
+	font-family: var(--body-font);
+	font-size: var(--body-size);
+	font-weight: 400;
+	padding: 0.5rem 1rem;
+	border-radius: 9999px;
+	display: inline-block;
 }
