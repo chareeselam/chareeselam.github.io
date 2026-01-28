@@ -6,6 +6,7 @@
 	--body-size: 0.9rem;
 	--h1-size: 2rem;
 	--h2-size: 1.5rem;
+	--h3-size: 1.2rem;
 
 	--gutter: 2rem;
 	--vertical: 4rem;
@@ -75,7 +76,7 @@
 #nav-links a {
 	text-decoration: none;
 	color: var(--black);
-	font-family: var(--body-font);
+	font-family: var(--heading-font);
 	font-weight: 500;
 	font-size: var(--body-size);
 }
@@ -128,27 +129,46 @@ body {
 }
 
 main {
-	padding-inline: var(--gutter);
+	/* padding-inline: 1rem; */
 	padding-block: var(--vertical);
 }
 
 h1 {
 	font-size: var(--h1-size);
+	font-family: var(--heading-font);
 }
 
 h2 {
-	color: var(--black);
+	color: var(--medium-pink);
 	font-size: var(--h2-size);
 	font-family: var(--heading-font);
 }
 
-ul {
-	padding-inline: var(--gutter);
-	display: grid;
-	gap: var(--gutter);
+h3 {
+	color: var(--medium-pink);
+	font-size: var(--h3-size);
+	font-family: var(--heading-font);
 }
 
-hgroup, footer {
+p {
+	color: var(--black);
+	font-size: var(--body-size);
+	font-family: var(--body-font);
+	line-height: 1.2rem;
+}
+
+.intro {
+	padding-block: var(--vertical);
+	padding-inline: 1rem;
+}
+
+ul {
+	/* padding-inline: var(--gutter); */
+	display: grid;
+	/* gap: var(--gutter); */
+}
+
+footer {
 	color: var(--background);
 	background-color: var(--color);
 	padding-inline: var(--gutter);
@@ -157,13 +177,18 @@ hgroup, footer {
 
 /* ------------ project covers ------------- */
 
-.project-cover {
+#projects {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
-	/* gap: var(--gutter);
+	grid-template-columns: 1fr;
+	gap: none;
+}
 
-	padding: var(--gutter); */
-	border: 2px solid var(--medium-pink);
+.project-cover {
+	/* aspect-ratio: 4 / 3; */
+	display: grid;
+	grid-template-rows: 1fr auto;
+
+	border: 1.2px solid var(--black);
 
 	text-decoration: none;
 	color: inherit;
@@ -171,10 +196,11 @@ hgroup, footer {
 }
 
 .project-content {
-	padding: var(--gutter);
+	padding: 1rem;
 	display: flex;
 	flex-direction: column;
-	gap: var(--gutter);
+	gap: 1rem;
+	/* justify-content: space-between; */
 }
 
 
@@ -187,4 +213,40 @@ hgroup, footer {
 	padding: 0.5rem 1rem;
 	border-radius: 9999px;
 	display: inline-block;
+}
+
+.project-image {
+	border-top: 1.2px solid var(--black);
+}
+
+@media (width>800px) {
+	main {
+		/* padding-inline: var(--gutter); */
+		padding-block: var(--vertical);
+	}
+	
+	#projects {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.project-content {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	/* .project-cover {
+		grid-template-rows: 1fr auto;
+	}
+
+	.project-image {
+		grid-row: 1;
+		border-top: none;	
+		border-bottom: 1.2px solid var(--black);
+  }
+
+	.project-content {
+		grid-row: 2;
+	} */
 }
