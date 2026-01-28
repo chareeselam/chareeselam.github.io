@@ -160,15 +160,23 @@ hgroup, footer {
 .project-cover {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	gap: var(--gutter);
+	/* gap: var(--gutter);
 
-	padding: var(--gutter);
+	padding: var(--gutter); */
 	border: 2px solid var(--medium-pink);
 
 	text-decoration: none;
 	color: inherit;
 	background: var(--white);
 }
+
+.project-content {
+	padding: var(--gutter);
+	display: flex;
+	flex-direction: column;
+	gap: var(--gutter);
+}
+
 
 .tag-pills {
 	background-color: var(--light-grey);
