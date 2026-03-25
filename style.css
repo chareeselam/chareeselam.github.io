@@ -1,8 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+@font-face {
+	font-family: 'Satoshi';
+	src: url('assets/fonts/Satoshi-Regular.otf') format('opentype');
+}
+
 :root {	
 	--body-font: "Inter", sans-serif;
-	--heading-font: "Geist", sans-serif;
+	--heading-font: "Satoshi", sans-serif;
 	--body-size: 0.9rem;
 	--h1-size: 2.5rem;
 	--h2-size: 1.5rem;
@@ -12,12 +17,8 @@
 	--vertical: 2rem;
 
 	--black: #171717;
-	--dark-pink: #BF4377;
-	--medium-pink: #F57AAD;
-	--light-pink: #FA87B7;
-	--baby-pink: #F9ECF0;
 	--white: #FFFFFF;
-	--light-grey: #F2F2F2;
+	--light-grey: #F0F0F0;
 }
 
 /* Wanted a cool pattern behind my work */
@@ -85,10 +86,6 @@ main {
 	padding-block-end: var(--vertical);
 }
 
-.pink {
-	color: var(--medium-pink);
-}
-
 footer {
 	color: var(--background);
 	background-color: var(--color);
@@ -125,6 +122,8 @@ nav {
 	margin-inline-start: auto;
 	/* border: 1px solid var(--dark-pink); */
 	position: relative;
+	background-color: var(--light-grey);
+	border-radius: 0.2rem;
 }
 
 /* #ham-menu:hover {
@@ -252,137 +251,136 @@ a.contact:hover {
 	display: grid;
 	grid-template-columns: 1fr;
 	gap: var(--gutter);
-	padding-inline-start: var(--gutter);
+	padding-inline: var(--gutter);
 }
-
+ 
 .project-cover {
 	aspect-ratio: auto;
-	display: grid;
-	grid-template-rows: 1fr auto;
-
-	border: 1.2px solid var(--light-grey);
-
+	display: flex;
+	flex-direction: column;
+ 
+	border: 1px solid #E0E0E0;
+	border-radius: 1.25rem;
+ 
 	text-decoration: none;
-	color: inherit;
+	color: var(--black);
 	background: var(--white);
-	border-radius: 4%;
+ 
+	overflow: hidden;
+	transition: border-color 0.2s ease;
 }
-
+ 
 .project-cover:hover {
 	border-color: var(--dark-pink);
 }
-
+ 
 .project-cover:hover h3 {
 	color: var(--dark-pink);
 }
-
+ 
 .project-content {
-	padding: var(--gutter);
+	padding: 1.25rem 1.25rem 0;
 	display: flex;
 	flex-direction: column;
 	gap: var(--gutter);
 }
-
+ 
 .project-meta {
 	display: flex;
 	flex-direction: column;
-	gap: calc(var(--gutter)/2);
+	gap: 0.75rem;
+	padding-inline: 0.25rem;
 }
-
+ 
 .tags {
 	display: flex;
 	flex-direction: row;
-	gap: calc(var(--gutter)/2);
+	flex-wrap: wrap;
+	gap: 0.5rem;
 	margin: 0;
 	padding: 0;
 	list-style: none;
 }
-
+ 
 .tag-pills {
 	background-color: var(--black);
 	color: var(--white);
 	font-family: var(--body-font);
-	font-size: 0.75rem;
-	font-weight: 400;
-	padding: calc(var(--gutter)/2);
+	font-size: 0.85rem;
+	font-weight: 500;
+	padding: 0.5rem 1.25rem;
 	border-radius: 9999px;
 	display: inline-flex;
 	white-space: nowrap;
 }
-
-
+ 
+ 
 .project-media {
-	aspect-ratio: 16 / 9;
+	aspect-ratio: 16 / 10;
 	width: 100%;
 	overflow: hidden;
+	border-radius: 0.75rem;
 }
-
+ 
 .project-image {
-	border-bottom: 1.2px solid var(--light-grey);
 	width: 100%;
-	height: auto;
+	height: 100%;
 	display: block;
-	object-fit: contain;
+	object-fit: cover;
+	border-radius: 0.75rem;
 }
-
+ 
 .project-description {
-	padding-block-end: var(--gutter);
-	padding-inline: var(--gutter);
+	padding: 0.75rem 1.25rem 1.25rem;
+	font-size: 1rem;
+	font-weight: 300;
+	line-height: 1.5;
 }
-
+ 
 /* @media (width>600px) {
 	
 	#projects {
 		grid-template-columns: repeat(2, 1fr);
 	}
-
+ 
 	.project-content {
 		display: flex;
 		flex-direction: column;
-		justify-content: space-between;
 	}
 }
-
+ 
 @media (width>1200px) {
 	main {
 		display: flex;
 		flex-direction: row;
 		align-items: flex-start;
 		gap: 6rem;
-	} */
-
-	/* .intro {
+	}
+ 
+	.intro {
 		margin-top: auto;
-	} */
-
-	/* #projects {
+	}
+ 
+	#projects {
 		flex: 0 0 700px;
 		margin-left: auto; 
-		grid-template-columns: 1fr;
-		row-gap: var(--gutter);
-	} */
-
-	/* .project-content {
-		display: grid;
-		grid-template-columns: 160px 1fr;
-		align-items: start;
+		grid-template-columns: repeat(2, 1fr);
 		gap: var(--gutter);
 	}
-
+ 
+	.project-content {
+		display: flex;
+		flex-direction: column;
+		gap: var(--gutter);
+	}
+ 
 	.project-description {
-		padding-block-start: var(--gutter);
-		opacity: 0;
-		max-height: 0;
-		overflow: hidden;
-		transition: opacity 0.25s ease, max-height 0.25s ease;
-	}
-
-	.project-cover {
-		grid-template-columns: 1fr auto;
-	}
-
-	.project-cover:hover .project-description {
 		opacity: 1;
-		max-height: 200px;
-	} */
-}
+		max-height: none;
+		overflow: visible;
+	}
+ 
+	.project-cover {
+		grid-template-columns: none;
+	}
+} */
