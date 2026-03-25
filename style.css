@@ -113,7 +113,7 @@ nav {
 }
 
 #logo img {
-	height: 48px;
+	height: 36px;
 	max-height: 100vh;
 	width: auto;
 	display: block;
@@ -123,18 +123,18 @@ nav {
 	height: 48px;
 	width: 48px;
 	margin-inline-start: auto;
-	border: 1px solid var(--dark-pink);
+	/* border: 1px solid var(--dark-pink); */
 	position: relative;
 }
 
-#ham-menu:hover {
+/* #ham-menu:hover {
 	background-color: var(--baby-pink);
-}
+} */
 
 #ham-menu span {
 	height: 3px;
 	width: 70%;
-	background-color: var(--dark-pink);
+	background-color: var(--black);
 	border-radius: 25px;
 	position: absolute;
 	left: 50%;
@@ -265,6 +265,7 @@ a.contact:hover {
 	text-decoration: none;
 	color: inherit;
 	background: var(--white);
+	border-radius: 4%;
 }
 
 .project-cover:hover {
@@ -277,8 +278,8 @@ a.contact:hover {
 
 .project-content {
 	padding: var(--gutter);
-	display: grid;
-	grid-template-columns: 1fr 2fr;
+	display: flex;
+	flex-direction: column;
 	gap: var(--gutter);
 }
 
@@ -298,8 +299,8 @@ a.contact:hover {
 }
 
 .tag-pills {
-	background-color: var(--baby-pink);
-	color: var(--dark-pink);
+	background-color: var(--black);
+	color: var(--white);
 	font-family: var(--body-font);
 	font-size: 0.75rem;
 	font-weight: 400;
@@ -329,7 +330,7 @@ a.contact:hover {
 	padding-inline: var(--gutter);
 }
 
-@media (width>600px) {
+/* @media (width>600px) {
 	
 	#projects {
 		grid-template-columns: repeat(2, 1fr);
@@ -348,20 +349,20 @@ a.contact:hover {
 		flex-direction: row;
 		align-items: flex-start;
 		gap: 6rem;
-	}
+	} */
 
-	.intro {
+	/* .intro {
 		margin-top: auto;
-	}
+	} */
 
-	#projects {
+	/* #projects {
 		flex: 0 0 700px;
 		margin-left: auto; 
 		grid-template-columns: 1fr;
 		row-gap: var(--gutter);
-	}
+	} */
 
-	.project-content {
+	/* .project-content {
 		display: grid;
 		grid-template-columns: 160px 1fr;
 		align-items: start;
@@ -383,5 +384,5 @@ a.contact:hover {
 	.project-cover:hover .project-description {
 		opacity: 1;
 		max-height: 200px;
-	}
+	} */
 }
