@@ -3,17 +3,26 @@
 @font-face {
 	font-family: 'Satoshi';
 	src: url('assets/fonts/Satoshi-Regular.otf') format('opentype');
+	font-weight: 400;
 }
 
-:root {	
+@font-face {
+	font-family: 'Satoshi';
+	src: url('assets/fonts/Satoshi-Medium.otf') format('opentype');
+	font-weight: 500;
+}
+
+:root {
 	--body-font: "Inter", sans-serif;
-	--heading-font: "Satoshi", sans-serif;
+	/* --heading-font: "Satoshi", sans-serif; */
+	--satoshi-regular: "Satoshi", sans-serif;
+	--satoshi-medium: "Satoshi", sans-serif;
 	--body-size: 0.9rem;
 	--h1-size: 2.5rem;
 	--h2-size: 1.5rem;
-	--h3-size: 1.2rem;
+	--h3-size: 1.5rem;
 
-	--gutter: 1rem;
+	--gutter: 1.5rem;
 	--vertical: 2rem;
 
 	--black: #171717;
@@ -46,7 +55,7 @@
 
 h1 {
 	font-size: var(--h1-size);
-	font-family: var(--heading-font);
+	font-family: var(--satoshi-regular);
 }
 
 h2 {
@@ -58,7 +67,7 @@ h2 {
 h3 {
 	color: var(--black);
 	font-size: var(--h3-size);
-	font-family: var(--heading-font);
+	font-family: var(--satoshi-regular);
 	font-weight: 500;
 }
 
@@ -78,23 +87,119 @@ main {
 }
 
 .intro {
+	position: relative;
+	overflow: hidden;
 	display: flex;
 	flex-direction: column;
 	gap: var(--gutter);
 	padding-inline: var(--gutter);
-	padding-block-start: 24rem;
+	padding-block-start: var(--vertical);
 	padding-block-end: var(--vertical);
+	min-height: 100vh;
+}
+
+.intro-flower {
+	position: absolute;
+	width: 55%;
+	aspect-ratio: 1;
+	object-fit: contain;
+	pointer-events: none;
+}
+
+.intro-flower-left {
+	display: none;
+	left: -4rem;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.intro-flower-right {
+	right: -4rem;
+	bottom: 8rem;
+}
+
+@media (min-width: 768px) {
+	.intro-flower-left {
+		display: block;
+	}
 }
 
 footer {
-	color: var(--background);
-	background-color: var(--color);
-	padding: var(--vertical);
+	padding: var(--vertical) var(--gutter);
+	display: flex;
+	flex-direction: column;
+	gap: var(--vertical);
+	min-height: 100vh;
 }
 
-footer p {
-  text-align: center;
-  font-size: 0.75rem;
+.footer-cta {
+	position: relative;
+	overflow: hidden;
+}
+
+.footer-left {
+	display: flex;
+	flex-direction: column;
+	gap: var(--gutter);
+}
+
+.footer-connect {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.75rem 1.25rem;
+	border: 1px solid var(--black);
+	text-decoration: none;
+	font-family: var(--body-font);
+	font-size: var(--body-size);
+	font-weight: 500;
+	color: var(--black);
+	letter-spacing: 0.05em;
+	width: fit-content;
+}
+
+.footer-connect:hover {
+	background-color: var(--light-grey);
+}
+
+.footer-links {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+}
+
+.footer-links a {
+	text-decoration: none;
+	color: var(--black);
+	font-family: var(--body-font);
+	font-size: var(--body-size);
+	font-weight: 400;
+	letter-spacing: 0.08em;
+}
+
+.footer-links a:hover {
+	opacity: 0.6;
+}
+
+.footer-decoration {
+	position: absolute;
+	right: -4rem;
+	bottom: -1rem;
+	width: 55%;
+	aspect-ratio: 1;
+	object-fit: contain;
+	pointer-events: none;
+}
+
+.footer-tagline {
+	margin-top: auto;
+	font-family: var(--satoshi-regular);
+	font-size: clamp(2.5rem, 10vw, 6rem);
+	line-height: 1.05;
+	font-weight: 400;
 }
 
 /* ------------ navigation ------------- */
@@ -271,12 +376,13 @@ a.contact:hover {
 }
  
 .project-cover:hover {
-	border-color: var(--dark-pink);
+	/* border-color: var(--dark-pink); */
+	transform: scale(1.01);
 }
  
-.project-cover:hover h3 {
+/* .project-cover:hover h3 {
 	color: var(--dark-pink);
-}
+} */
  
 .project-content {
 	padding: 1.25rem 1.25rem 0;
@@ -307,7 +413,7 @@ a.contact:hover {
 	color: var(--white);
 	font-family: var(--body-font);
 	font-size: 0.85rem;
-	font-weight: 500;
+	font-weight: 300;
 	padding: 0.5rem 1.25rem;
 	border-radius: 9999px;
 	display: inline-flex;
