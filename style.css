@@ -25,7 +25,7 @@
 
 	--black: #171717;
 	--white: #FFFFFF;
-	--light-grey: #F0F0F0;
+	--light-grey: #e4e4e4;
 }
 
 /* ------------ type ------------- */
@@ -124,20 +124,27 @@ main {
 	}
 
 	#nav-links a {
-		display: block;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.25rem;
 		text-decoration: none;
 		color: var(--black);
 		font-family: var(--body-font);
 		font-weight: 300;
 		font-size: var(--body-size);
-		/* padding-inline: 0.2rem; */
-		/* backdrop-filter: invert(100%); */
-	}
 
-	#nav-links a:hover {
-		color: var(--white);
-		background-color: var(--black);
-		transition: 0.5s ease;
+		svg {
+			width: var(--body-size);
+			height: var(--body-size);
+			stroke-width: 1.5;
+			transition: 0.5s ease;
+		}
+
+		&:hover {
+			color: var(--white);
+			background-color: var(--black);
+			transition: 0.5s ease;
+		}
 	}
 }
 
@@ -147,8 +154,8 @@ main {
 }
 
 #logo img {
-	height: 36px;
-	max-height: 100vh;
+	inline-size: 36px;
+	max-inline-size: 100vh;
 	width: auto;
 	display: block;
 }
@@ -159,7 +166,13 @@ main {
 	display: flex;
 	flex-direction: column;
 	gap: calc(2*var(--gutter));
-	padding-block: calc(2*var(--gutter));
+	padding-block: calc(4*var(--gutter));
+
+	.divider {
+		inline-size: 100%;
+		height: 1px;
+		background-color: var(--light-grey);
+	}
 }
  
 .project-cover {
