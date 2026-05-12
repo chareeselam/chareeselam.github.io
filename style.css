@@ -28,27 +28,6 @@
 	--light-grey: #F0F0F0;
 }
 
-/* Wanted a cool pattern behind my work */
-/* Found this pattern collection: https://css-pattern.com/ */
-/* I learned that you can layer multiple CSS gradients to... */
-/* html {
-	--s: 98px;
-	--grid-line: #336666;
-	--c2: #ffffff;
-	
-	--_g: #0000 90deg,var(--grid-line) 0;
-	background: 
-		conic-gradient(from 90deg at 2px 2px,var(--_g)),
-		conic-gradient(from 90deg at 1px 1px,var(--_g)),
-		var(--c2);
-	background-size: var(--s) var(--s), calc(var(--s)/5) calc(var(--s)/5);
-} */
-
-/* body {
-	display: grid;
-	grid-template-rows:1fr auto;
-} */
-
 /* ------------ type ------------- */
 
 h1 {
@@ -62,7 +41,11 @@ h2 {
 	color: var(--black);
 	font-size: var(--h2-size);
 	font-family: var(--body-font);
-	font-weight: 500;
+	font-weight: 400;
+
+	@media (width>700px) {
+		font-size: calc(var(--h2-size)*2);
+	}
 }
 
 p {
@@ -78,33 +61,57 @@ p {
 main {
 	display: flex;
 	flex-direction: column;
+	padding-inline: var(--gutter);
+	padding-block-end: var(--gutter);
+	gap: calc(2*var(--gutter));
+	align-items: center;
 }
 
-.intro {
+#hero {
+	block-size: 80svh;
+	display: flex; 
+	flex-direction: column; 
+	justify-content: space-between;
+	align-items: center;
+}
+
+#intro {
 	position: relative;
 	overflow: hidden;
 	display: flex;
 	flex-direction: column;
 	gap: var(--gutter);
-	padding-inline-start: var(--gutter);
-	padding-inline-end: calc(4*var(--gutter));
-	padding-block-start: calc(4*var(--gutter));
-	padding-block-end: calc(2*var(--gutter));
+	align-items: center;
+	max-inline-size: 36rem;
+	align-items: center;
+
+	video {
+		position: relative;
+		max-inline-size: 24rem;
+	}
+
+	#intro-text {
+		text-align: center;
+	}
 }
 
-/* ------------ navigation ------------- */
+/* ------------ nav ------------- */
 
 #nav {
+	display: block;
+	inline-size: 100%;
+	position: sticky; 
+	top: 0; 
+	z-index: 100; 
+	background: var(--white);
 	padding-block: var(--gutter);
-	margin-inline: var(--gutter);
-	display: flex;
-	border-bottom: 1px solid var(--black);
 
 	#nav-links {
 		list-style: none;
 		display: flex;
 		flex-direction: row;
-		gap: calc(2*var(--gutter));
+		inline-size: 100%;
+		justify-content: space-between;
 	}
 
 	#nav-links a {
@@ -114,6 +121,7 @@ main {
 		font-family: var(--body-font);
 		font-weight: 300;
 		font-size: var(--body-size);
+		padding-inline: 0.2rem;
 	}
 
 	#nav-links a:hover {
@@ -132,6 +140,84 @@ main {
 	max-height: 100vh;
 	width: auto;
 	display: block;
+}
+
+/* ------------ projects section ------------- */
+
+#projects {
+	display: flex;
+	flex-direction: column;
+	gap: var(--gutter);
+	padding-block-start: 4rem;
+	/* padding: var(--gutter); */
+
+	/* @media (width>700px) {
+		inline-size: 70%;
+		align-self: flex-end;
+	} */
+
+	/* .project {
+		border-bottom: 1px solid var(--black);
+
+		&:last-child {
+			border-bottom: none;
+		}
+	} */
+}
+ 
+.project-cover {
+	aspect-ratio: auto;
+	display: flex;
+	flex-direction: column;
+ 
+	text-decoration: none;
+	color: var(--black);
+	background: var(--white);
+ 
+	overflow: hidden;
+	transition: border-color 0.2s ease;
+}
+
+ 
+.project-content {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	gap: var(--gutter);
+	padding-block-end: var(--gutter);
+
+	@media (width>700px) {
+		flex-direction: row;
+		flex: 1;
+	}
+
+	.project-meta {
+		display: flex;
+		flex-direction: column;
+		gap: var(--gutter);
+		flex: 1;
+
+		@media (width>700px) {
+			flex-grow:2;
+		}
+	}
+
+	.project-image {
+		inline-size: 100%; 
+		block-size: 100%;
+		display: block;
+		object-fit: cover;
+		flex: 1;
+
+		@media (width>700px) {
+			max-inline-size: 40%;
+		}
+	}
+
+	.tags {
+		text-align: end;
+		flex: 1;
+	}
 }
 
 /* #ham-menu {
@@ -196,7 +282,9 @@ main {
 }
 
 #off-screen-menu {
-	background-color: var(--light-grey);
+	@media (width>700px) {
+		inline-size: 60%;
+		background-color: var(--light-grey);
 	height: 100vh;
 	width: 100%;
 	max-width: 450px;
@@ -217,7 +305,7 @@ main {
 
 
 
-.contact {
+/* .contact {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
@@ -233,67 +321,4 @@ main {
 	font-family: var(--body-font);
 	font-weight: 500;
 	font-size: var(--body-size);
-}
-
-/* ------------ project covers ------------- */
-
-#projects {
-	display: grid;
-	grid-template-columns: 1fr;
-	gap: var(--gutter);
-	padding: var(--gutter);
-
-	.project {
-		border-bottom: 1px solid var(--black);
-
-		&:last-child {
-			border-bottom: none;
-		}
-	}
-}
- 
-.project-cover {
-	aspect-ratio: auto;
-	display: flex;
-	flex-direction: column;
- 
-	text-decoration: none;
-	color: var(--black);
-	background: var(--white);
- 
-	overflow: hidden;
-	transition: border-color 0.2s ease;
-
-	/* &:hover {
-		transform: scale(1.01);
-	} */
-}
-
- 
-.project-content {
-	display: flex;
-	flex-direction: column;
-	gap: var(--gutter);
-	padding-block-end: var(--gutter);
-
-	/* &:last-child {
-		padding-block-end: 0;
-	} */
-}
- 
-.project-meta {
-	display: flex;
-	flex-direction: column;
-	gap: var(--gutter);
-}
- 
-.project-image {
-	width: 100%;
-	height: 100%;
-	display: block;
-	object-fit: cover;
-}
-
-.tags {
-	text-align: end;
-}
+} */

@@ -8,54 +8,7 @@
 		<script defer src="script.js"></script>
 	</head>	
 	<body>
-		<!-- <nav id="navigation">
-			<a class="nav-logo" href="https://chareeselam.github.io/">
-				<img src="./images/logo.png" alt="Chareese Lam logo">
-			</a>
-
-			<ol id="nav-links">
-				<li><a href="https://chareeselam.com">Portfolio</a></li>
-				<li><a href="https://drive.google.com/file/d/1gPbibbqsUOvJA3keMn0EurYeTrGAAAWP/view?usp=sharing">Resume</a></li>
-				<li><a href="https://www.linkedin.com/in/chareese-lam/">LinkedIn</a></li>
-			</ol>
-
-			<a class="contact" href="mailto:chareeselam@gmail.com">Contact</a></li>
-		</nav> -->
-
-
-		<!-- https://www.youtube.com/watch?v=aNDqzlAKmZc -->
-			<!-- I'm experimenting going for a cleaner look for my coding portfolio and wanted to learn how to make a navigation menu animate from the hamburger menu to X -->
-			<!-- I learned that it's as simple as rotating the top and bottom of the .menu <spans> and changing opacity for the middle <span>-->
-		<!-- <nav>
-			<a id="logo" href="https://chareeselam.github.io/">
-				<img src="/assets/media/logo.png" alt="Chareese Lam logo">
-			</a>
-			<div id="ham-menu">
-				<span></span>
-				<span></span>
-				<span></span>
-			</div>
-		</nav>
-		<div id="off-screen-menu">
-			<button id="close-menu">
-				<span></span>
-				<span></span>
-			</button>
-			<ol id="nav-links">
-				<li><a href="https://chareeselam.com">Portfolio</a></li>
-				<li><a href="https://drive.google.com/file/d/1cmO1Y25UK0pkr66SlDlN1qHZ4wGMQQb-/view?usp=drive_link">Resume</a></li>
-				<li><a href="https://www.linkedin.com/in/chareese-lam/">LinkedIn</a></li>
-			</ol>
-			<a class="contact" href="mailto:chareeselam@gmail.com">Contact</a>
-		</div> -->
-
-
 		<main>
-			<section class="intro">
-				<h1>chareese</h1>
-				<p>This is a collection of hand-coded projects from my Parsons Master's of Professional Studies in Communication Design <a href="https://typography-interaction-2526.github.io/">Typography & Interaction</a> class.</p>
-			</section>
-			
 			<section id="nav">
 				<nav>
 					<ol id="nav-links">
@@ -73,17 +26,26 @@
 						</li>
 					</ol>
 				</nav>
-				<div class="line"></div>
+			</section>
+
+			<section id="hero">
+				<div id="intro">
+					<video autoplay muted loop id="intro-video">
+						<source src="/assets/media/animation-1.mp4" type="video/mp4">
+					</video>
+					<h1>chareese</h1>
+					<p id="intro-text">welcome to my collection of hand-coded projects from my time at Parsons in MPS Communication Design <a href="https://typography-interaction-2526.github.io/">Typography & Interaction</a> class.</p>
+				</div>
+				<p>scroll me</p>
 			</section>
 			
-
 			<ul id="projects">
 				<li class="project">
 					<a class="project-cover" href="/functions">
 						<div class="project-content">
 							<div class="project-meta">
 								<h2>/functions</h2>
-								<p>Coming soon...</p>
+								<p>A digital tool designed to help people spend their evenings more intentionally by suggesting activities based on energy, time, budget, and mood</p>
 							</div>
 							<img src="/assets/media/functions.png" class="project-image">
 							<p class="tags">html, css, js</p>
