@@ -81,7 +81,7 @@ main {
 		flex-direction: column;
 		gap: var(--gutter);
 		align-items: center;
-		max-inline-size: 36rem;
+		max-inline-size: 30rem;
 		align-items: center;
 
 		video {
@@ -97,7 +97,7 @@ main {
 
 @keyframes bounce {
 	0%, 60%, 100% { transform: translateY(0); }
-	30%           { transform: translateY(-10px); }
+	30%           { transform: translateY(0.8rem); }
 }
 
 #scroll {
@@ -158,8 +158,8 @@ main {
 #projects {
 	display: flex;
 	flex-direction: column;
-	gap: var(--gutter);
-	padding-block-start: 4rem;
+	gap: calc(2*var(--gutter));
+	padding-block: calc(2*var(--gutter));
 }
  
 .project-cover {
@@ -180,14 +180,12 @@ main {
 		transition: 0.5s ease;
 	}
 }
-
  
 .project-content {
 	display: flex;
 	flex-direction: column;
 	flex: 1;
 	gap: var(--gutter);
-	padding-block-end: var(--gutter);
 
 	@media (width>700px) {
 		flex-direction: row;
