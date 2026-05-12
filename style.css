@@ -73,26 +73,36 @@ main {
 	flex-direction: column; 
 	justify-content: space-between;
 	align-items: center;
+
+	#intro {
+		position: relative;
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+		gap: var(--gutter);
+		align-items: center;
+		max-inline-size: 36rem;
+		align-items: center;
+
+		video {
+			position: relative;
+			max-inline-size: 24rem;
+		}
+
+		#intro-text {
+			text-align: center;
+		}
+	}
 }
 
-#intro {
-	position: relative;
-	overflow: hidden;
-	display: flex;
-	flex-direction: column;
-	gap: var(--gutter);
-	align-items: center;
-	max-inline-size: 36rem;
-	align-items: center;
+@keyframes bounce {
+	0%, 60%, 100% { transform: translateY(0); }
+	30%           { transform: translateY(-10px); }
+}
 
-	video {
-		position: relative;
-		max-inline-size: 24rem;
-	}
-
-	#intro-text {
-		text-align: center;
-	}
+#scroll {
+	text-align: center;
+	animation: bounce 3s ease-in-out infinite;
 }
 
 /* ------------ nav ------------- */
