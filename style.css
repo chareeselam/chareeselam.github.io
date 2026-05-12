@@ -18,7 +18,7 @@
 	/* --satoshi-regular: "Satoshi", sans-serif;
 	--satoshi-medium: "Satoshi", sans-serif; */
 	--body-size: 0.9rem;
-	--h1-size: 4rem;
+	--h1-size: 3rem;
 	--h2-size: 1.5rem;
 
 	--gutter: 1.5rem;
@@ -35,6 +35,10 @@ h1 {
 	font-family: var(--heading-font);
 	font-weight: 500;
 	line-height: var(--h1-size);
+
+	@media (width>472px) {
+		font-size: 4rem;
+	}
 }
 
 h2 {
@@ -81,7 +85,7 @@ main {
 		flex-direction: column;
 		gap: var(--gutter);
 		align-items: center;
-		max-inline-size: 30rem;
+		max-inline-size: 32rem;
 		align-items: center;
 
 		video {
@@ -91,6 +95,26 @@ main {
 
 		#intro-text {
 			text-align: center;
+
+			a {
+				display: inline-flex;
+				align-items: center;
+				gap: 0.25rem;
+				text-decoration: none;
+				color: var(--black);
+
+				svg {
+					width: var(--body-size);
+					height: var(--body-size);
+					flex-shrink: 0;
+				}
+
+				&:hover {
+					color: var(--white);
+					background-color: var(--black);
+					transition: 0.5s ease;
+				}
+			}
 		}
 	}
 }
@@ -167,7 +191,7 @@ main {
 	flex-direction: column;
 	gap: calc(2*var(--gutter));
 	padding-block: calc(4*var(--gutter));
-	max-inline-size: 48rem;
+	max-inline-size: 52rem;
 
 	.divider {
 		inline-size: 100%;
