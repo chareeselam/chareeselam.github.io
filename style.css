@@ -101,7 +101,6 @@ main {
 }
 
 #scroll {
-	text-align: center;
 	animation: bounce 3s ease-in-out infinite;
 }
 
@@ -113,7 +112,7 @@ main {
 	position: sticky; 
 	top: 0; 
 	z-index: 100; 
-	background: var(--white);
+	/* background: var(--white); */
 	padding-block: var(--gutter);
 
 	#nav-links {
@@ -131,12 +130,14 @@ main {
 		font-family: var(--body-font);
 		font-weight: 300;
 		font-size: var(--body-size);
-		padding-inline: 0.2rem;
+		/* padding-inline: 0.2rem; */
+		/* backdrop-filter: invert(100%); */
 	}
 
 	#nav-links a:hover {
 		color: var(--white);
 		background-color: var(--black);
+		transition: 0.5s ease;
 	}
 }
 
@@ -159,20 +160,6 @@ main {
 	flex-direction: column;
 	gap: var(--gutter);
 	padding-block-start: 4rem;
-	/* padding: var(--gutter); */
-
-	/* @media (width>700px) {
-		inline-size: 70%;
-		align-self: flex-end;
-	} */
-
-	/* .project {
-		border-bottom: 1px solid var(--black);
-
-		&:last-child {
-			border-bottom: none;
-		}
-	} */
 }
  
 .project-cover {
@@ -186,6 +173,12 @@ main {
  
 	overflow: hidden;
 	transition: border-color 0.2s ease;
+
+	&:hover .project-title {
+		color: var(--white);
+		background-color: var(--black);
+		transition: 0.5s ease;
+	}
 }
 
  
