@@ -33,7 +33,7 @@
 h1 {
 	font-size: var(--h1-size);
 	font-family: var(--heading-font);
-	font-weight: 600;
+	font-weight: 500;
 	line-height: var(--h1-size);
 }
 
@@ -167,6 +167,7 @@ main {
 	flex-direction: column;
 	gap: calc(2*var(--gutter));
 	padding-block: calc(4*var(--gutter));
+	max-inline-size: 48rem;
 
 	.divider {
 		inline-size: 100%;
@@ -176,24 +177,44 @@ main {
 }
  
 .project-cover {
-	aspect-ratio: auto;
 	display: flex;
 	flex-direction: column;
- 
 	text-decoration: none;
 	color: var(--black);
 	background: var(--white);
- 
 	overflow: hidden;
 	transition: border-color 0.2s ease;
 
-	&:hover .project-title {
-		color: var(--white);
-		background-color: var(--black);
-		transition: 0.5s ease;
+	@media (width > 800px) {
+		&:hover .project-title {
+			color: var(--white);
+			background-color: var(--black);
+			transition: 0.5s ease;
+
+			svg {
+				opacity: 1;
+			}
+		}
 	}
 }
  
+.project-title {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.25rem;
+ 
+	svg {
+		width: 1em;
+		height: 1em;
+		flex-shrink: 0;
+
+		@media (width > 700px) {
+			opacity: 0;
+			transition: opacity 0.5s ease-in; /* note the 's' */
+		}
+	}
+}
+
 .project-content {
 	display: flex;
 	flex-direction: column;
