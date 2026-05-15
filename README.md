@@ -1,13 +1,13 @@
 # Index by Chareese Lam
 
-##About
+## About
 This landing page was created as my final Index Project for the Typography & Interaction course at Parsons School of Design in 2026.
 
 Over the year, I worked on a series of hand-coded projects that taught me to sit with the code, build responsively, fix bugs, and understand the browser as a design material rather than a technical layer underneath it.
 
 The page lists all five projects with a short description and a direct link to each one. It was built with plain HTML, CSS, and JavaScript, no frameworks.
 
-##Projects
+## Projects
 1. Functions - https://chareeselam.github.io/functions/
 A digital tool designed to help people spend their evenings more intentionally by suggesting activities based on energy, time, budget, and mood.
 2. Links - https://chareeselam.github.io/links/
